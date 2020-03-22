@@ -1,12 +1,26 @@
 
 //click on a li to mark it complete. click again to unmark
-$('li').click(function()
+// $('li').click(function()
+// {
+//     $(this).toggleClass("done");
+// });
+
+$('ul').on('click','li',function()
 {
     $(this).toggleClass("done");
 });
 
 //click on a span to delete a list item
-$('span').click(function(event)
+// $('span').click(function(event)
+// {
+//   $(this).parent().fadeOut(300,function()
+//   {
+//     $(this).remove();
+//   });
+//   event.stopPropagation();
+// });
+
+$('ul').on('click','span',function(event)
 {
   $(this).parent().fadeOut(300,function()
   {
@@ -25,6 +39,6 @@ $("input[type='text'").keypress(function(event)
     var nitem = $(this).val();
     $(this).val("");
     //adding to ul
-    $('ul').append("<li><span>X</span> "+nitem+"<\li>");
+   $('ul').append("<li><span>X</span> "+nitem+"</li>");
   }
 });
