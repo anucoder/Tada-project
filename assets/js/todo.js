@@ -24,7 +24,18 @@
 //            jQuery Version
 // *************************************
 
+//click on a li to mark it complete. click again to unmark
 $('li').click(function()
 {
     $(this).toggleClass("done");
+});
+
+//click on a span to delete a list item
+$('span').click(function(event)
+{
+  $(this).parent().fadeOut(300,function()
+  {
+    $(this).remove();
+  });
+  event.stopPropagation();
 });
