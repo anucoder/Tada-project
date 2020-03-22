@@ -1,25 +1,11 @@
 
 //click on a li to mark it complete. click again to unmark
-// $('li').click(function()
-// {
-//     $(this).toggleClass("done");
-// });
-
 $('ul').on('click','li',function()
 {
     $(this).toggleClass("done");
 });
 
 //click on a span to delete a list item
-// $('span').click(function(event)
-// {
-//   $(this).parent().fadeOut(300,function()
-//   {
-//     $(this).remove();
-//   });
-//   event.stopPropagation();
-// });
-
 $('ul').on('click','span',function(event)
 {
   $(this).parent().fadeOut(300,function()
@@ -28,7 +14,6 @@ $('ul').on('click','span',function(event)
   });
   event.stopPropagation();
 });
-
 
 //adding a new item to List
 $("input[type='text'").keypress(function(event)
@@ -42,3 +27,9 @@ $("input[type='text'").keypress(function(event)
    $('ul').append("<li><span><i class='fas fa-trash-alt'></i></span> "+nitem+"</li>");
   }
 });
+
+//toggle the + Niconne
+$(".fa-plus").click(function()
+{
+  $("input[type='text'").fadeToggle();
+})
