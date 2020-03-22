@@ -1,28 +1,3 @@
-//
-// var lis = document.querySelectorAll("li");
-//
-//
-//
-// for(var i=0;i<lis.length;i++)
-// {
-//   lis[i].addEventListener("mouseover",function()
-//   {
-//     this.classList.add("selected");
-//   });
-//   lis[i].addEventListener("mouseout",function()
-//   {
-//     this.classList.remove("selected");
-//   });
-//   lis[i].addEventListener("click",function()
-//   {
-//     this.classList.toggle("done");
-//   });
-// }
-
-
-// **************************************
-//            jQuery Version
-// *************************************
 
 //click on a li to mark it complete. click again to unmark
 $('li').click(function()
@@ -38,4 +13,18 @@ $('span').click(function(event)
     $(this).remove();
   });
   event.stopPropagation();
+});
+
+
+//adding a new item to List
+$("input[type='text'").keypress(function(event)
+{
+  if(event.which === 13)
+  {
+    //grabbing new list item
+    var nitem = $(this).val();
+    $(this).val("");
+    //adding to ul
+    $('ul').append("<li><span>X</span> "+nitem+"<\li>");
+  }
 });
