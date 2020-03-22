@@ -39,6 +39,6 @@ $("input[type='text'").keypress(function(event)
     var nitem = $(this).val();
     $(this).val("");
     //adding to ul
-   $('ul').append("<li><span>X</span> "+nitem+"</li>");
+   $('ul').append("<li><span><i class='fas fa-trash-alt'></i></span> "+nitem+"</li>");
   }
 });
